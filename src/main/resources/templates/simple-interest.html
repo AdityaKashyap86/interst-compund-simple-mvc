@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple</title>
+</head>
+<body>
+        <form th:action="@{/simple/calculate}" th:object="${domain}" method="post">
+            <table align="center">
+            <tr>
+                <td><label>PRINCIPLE : </label></td>
+                <td><input type="number" th:feild="*{principleAmount}"></td>
+            </tr></br>
+            <tr>
+                <td><label>RATE OF INTEREST</label></td>
+                <td><input type="number" th:feild="*{rateOfInterest}"></td>
+            </tr></br>
+            <tr>
+                <td><label>DURATION</label></td>
+                <td><input type="number" th:feild="*{duration}"></td>
+            </tr>
+
+                <tr>
+                    <td><input type="submit" value="Calculate"></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <h3>Total Amount</h3>
+                    </td>
+                    <td>
+                        <h3 th:text=${interest.getTotalAmount}></h3>
+                    </td>
+                </tr>
+            </table>
+        </form>
+</body>
+</html>

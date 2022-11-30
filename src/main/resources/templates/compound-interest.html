@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Compound</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form th:action="@{/compound/calculate}" th:object="${interest}" method="post">
+        <table align="center">
+            <tr>
+                <td><label>AMOUNT:</label></td>
+                <td><input type="number" th:field="*{principleAmount}"></td>
+            </tr>
+            <tr>
+                <td><label>RATE OF INTEREST:</label></td>
+                <td><input type="number" th:field="*{rateOfInterestAmount}"></td>
+            </tr>
+            <tr>
+                <td><label>DURATION:</label></td>
+                <td><input type="number" th:field="*{duration}"></td>
+            </tr>
+            <tr>
+                <td>
+                    <h3>TOTAL AMOUNT</h3>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <h3 th:text=${interest.getTotalAmount}></h3>
+                </td>
+            </tr>
+
+            <td>
+                <input type="submit" value="Calculate">
+            </td>
+        </table>
+    </form>
+
+</body>
+</html>
